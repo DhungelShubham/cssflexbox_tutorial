@@ -5,6 +5,7 @@
     --text-secondary :#ececec;  /*  CSS Variables eazy to swap colour   */
     --bg-primary:#3c3c44;
     --bg-secondary: #242429;
+    --transition-speed: 600ms;
 
 
 }
@@ -19,11 +20,11 @@
 
 
         body::-webkit-scrollbar{
-            width: 0.5rem;
+            width: 0.35rem;
         }
 
         ::-webkit-scrollbar-track{
-            background: #bd4ab3;
+            background: #8b3b84;
         }
         ::-webkit-scrollbar-thumb{
             background: #431949fe;
@@ -43,7 +44,7 @@
             height: 100vh;/*vh is relative to size of view port */
             position: fixed; 
             background-color: var(--bg-primary);
-            transition: width 200ms ease; /*for transition of navigation bar */
+            transition: width 300ms ease; /*for transition of navigation bar */
 
         }
          /*  flex container  */
@@ -63,7 +64,7 @@
         }
 
         .nav-item:last-child{
-            margin-top: auto;/*last item lai bottonm ma rakheko */
+            margin-top: auto;/*last item lai bottom ma rakheko */
         }
 
         .nav-link{
@@ -72,24 +73,25 @@
             height: 5rem;
             color: var(--text-primary);
             text-decoration: none;
-            filter:opacity(1);
+            filter:opacity(0.8);
             transition: var(--transition-speed);
 
         }
         .nav-link:hover{
-            filter: grayscale(0%) opacity(1); /*for the animation like effects*/
+            filter: opacity(1); /*for the animation like effects*/
             background: var(--bg-secondary);
             color: var(--text-secondary);
         }
 
         .link-text{
-            font-display: none;
+            display: none;
             margin-left: 1rem;
 
         }
         .nav-link svg{
             min-width: 2rem;
-            margin: 1.5rem;
+            width: 2 rem;
+            margin:  1.5rem;
         }
 
         .navbar:hover{
@@ -116,7 +118,7 @@
         }
 
         .logo{
-            font-weight: 100;
+            font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 1rem;
             text-align: center;
@@ -131,12 +133,14 @@
         /*roating the arrow*/
         .logo svg{
             transform: rotate(0deg);
-            transition: tranform var(--transition-speed);
+            transition: var(--transition-speed);
             
         }
+    
 
         .navbar:hover .logo svg{
             transform: rotate(-180deg);
-            transition-duration: 1s;
+            
+        
             
         }
